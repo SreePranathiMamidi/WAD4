@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Basket - Your Grocery Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #a3d133;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            font-size: 44px;
+            margin: 0;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #ffffff;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #a3d133;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 150vh;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section:target {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Big Basket Logo" height="200px">
+        <h1>big basket</h1>
+    </div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#login">Login</a>
+        <a href="#register">Registration</a>
+        <a href="#categories">Categories</a>
+        <a href="#cart">Cart</a>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <h2>Our Services</h2>
+            <ul>
+                <li><a href="#home-delivery">Home Delivery</a></li>
+                <li><a href="#customer-support">Customer Support</a></li>
+                <li><a href="#special-offers">Special Offers</a></li>
+                <li><a href="#payment-methods">Payment Methods</a></li>
+                <li><a href="#returns-refunds">Returns & Refunds</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="home" class="content-section">
+                <h1 align="center">Welcome to Big Basket</h1>
+                <p>Big Basket is your one-stop shop for all your grocery needs. From fresh fruits and vegetables to
+                    everyday essentials, we have it all. Browse through our wide range of products and enjoy hassle-free
+                    shopping from the comfort of your home.</p>
+                <p>Stay tuned for amazing deals and discounts every week. We are committed to providing you with the
+                    best quality products at the most affordable prices.</p>
+                <p>Happy shopping!</p>
+                <h3 align="right"><strong>- Mamidi Sree
+                        Pranathi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                </h3>
+            </div>
+            <div id="login" class="content-section">
+                <form>
+                    <table align="center" cellspacing="15px">
+                        <tr>
+                            <td><b>Login</b></td>
+                            <td><input type="text" name="uname" /></td>
+                        </tr>
+                        <tr>
+                            <td><b>Password</b></td>
+                            <td><input type="password" name="upwd" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" align="center" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="register" class="content-section">
+                <form>
+                    <h1 align="center">Grocery Store Registration</h1>
+                    <table align="center" cellspacing="10">
+                        <tr>
+                            <td>Full Name:</td>
+                            <td><input name="uname" type="text" placeholder="Enter your full name" required></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input name="pwd" type="password" placeholder="Create a password" required></td>
+                        </tr>
+                        <tr>
+                            <td>Email ID:</td>
+                            <td><input name="email" type="email" required></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number:</td>
+                            <td><input name="phno" type="tel" maxlength="10" required></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Address:</td>
+                            <td><textarea name="address" placeholder="Enter delivery address" rows="4" cols="25"
+                                    required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Register">&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="reset" value="Reset">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="categories" class="content-section">
+                <h1 align="center">Product Categories</h1>
+                <table align="center">
+                    <tr>
+                        <td><a href="#masalas-oil"><img src="masala.png" alt="Masalas & Oil" width="200"
+                                    height="150"></a></td>
+                        <td><a href="#beverages"><img src="beverages.png" alt="Beverages" width="200"
+                                    height="150"></a></td>
+                        <td><a href="#dairy"><img src="dairy.png" alt="Dairy Products" width="200" height="150"></a>
+                        </td>
+                        <td><a href="#snacks"><img src="snacks.png" alt="Snacks" width="200" height="150"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#vegetables"><img src="vegetables.png" alt="Fruits & Vegetables" width="200"
+                                    height="150"></a></td>
+                        <td><a href="#meat"><img src="meat.png" alt="Meat" width="200" height="150"></a></td>
+                        <td><a href="#cereal"><img src="cereal.png" alt="Breakfast & Instant Food" width="200"
+                                    height="150"></a></td>
+                        <td><a href="#sauces"><img src="sauces.png" alt="Sauces & Spreads" width="200"
+                                    height="150"></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="terms" class="content-section">
+                <h1 align="center">Terms and Conditions</h1>
+                <p align="center">
+                    Welcome to Big Basket! By accessing our website and using our services, you agree to be bound by the following terms and conditions. Please read them carefully.
+                </p>
+                
+                <h2>1. User Account</h2>
+                <p>
+                    You may be required to create an account to make purchases or access certain features on our website. You are responsible for maintaining the confidentiality of your account and password.
+                </p>
+            
+                <h2>2. Product Availability</h2>
+                <p>
+                    All products displayed on the website are subject to availability. Prices and offers may change without prior notice.
+                </p>
+            
+                <h2>3. Order Cancellation</h2>
+                <p>
+                    Orders can be cancelled only before the dispatch of the goods. Once an order is dispatched, it cannot be cancelled, but you may follow the return and refund procedure.
+                </p>
+            
+                <h2>4. Payment</h2>
+                <p>
+                    All payments must be made through the available payment methods on our website. If there are issues with payment processing, we reserve the right to cancel your order.
+                </p>
+            
+                <h2>5. Delivery</h2>
+                <p>
+                    We offer delivery to specific regions as mentioned on our website. Delivery charges may vary depending on the location. Estimated delivery times will be provided at the time of order confirmation.
+                </p>
+            
+                <h2>6. Return and Refund Policy</h2>
+                <p>
+                    You can return products within 7 days of purchase if they are in original condition. Refunds will be processed as per our return policy.
+                </p>
+            
+                <h2>7. Customer Support</h2>
+                <p>
+                    If you have any issues or questions, please contact our customer support team. Our contact details are available on the customer support page.
+                </p>
+            
+                <h2>8. Changes to Terms</h2>
+                <p>
+                    We reserve the right to modify these terms at any time. All changes will be posted on this page, and your continued use of our services will be deemed as acceptance of these updated terms.
+                </p>
+            
+                <h2>9. Governing Law</h2>
+                <p>
+                    These terms are governed by the laws of the country where Big Basket operates. Any disputes will be resolved in the appropriate courts.
+                </p>
+            
+                <h2>10. Contact Us</h2>
+                <p>
+                    For any inquiries or concerns regarding these terms, feel free to contact us at:
+                </p>
+                <ul>
+                    <li>Email: supportme@bigbasket.com</li>
+                    <li>Phone: 1234567890</li>
+                </ul>
+            
+                <p align="center"><strong>MamidiSree Pranathi</strong></p>
+            
+                <p align="center">
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            
+            <div id="beverages" class="content-section">
+                <h1 align="center">Beverages</h1>
+                <p align="center">
+                    Explore our best beverages to quench your thirst! We offer a wide variety of drinks that are refreshing, delicious, and affordable.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="12.png" alt="Pepsi Zero Sugar" width="200" height="150">
+                            <p>Pepsi Zero Sugar Diets & Lights - Pack of 2 (750 ml)</p>
+                            <p>₹77</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="13.png" alt="Thums Up Soft Drink" width="200" height="150">
+                            <p>Thums Up Soft Drink (750 ml)</p>
+                            <p>₹45</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="14.png" alt="Sprite Lime Flavored Soft Drink" width="200" height="150">
+                            <p>Sprite Lime Flavored Soft Drink (750 ml)</p>
+                            <p>₹45</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="15.png" alt="Coca-Cola Diet Coke" width="200" height="150">
+                            <p>Coca-Cola Diet Coke (Pack of 6, 300 ml)</p>
+                            <p>₹238</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="16.png" alt="Paper Boat Zero Lemon Lime" width="200" height="150">
+                            <p>Paper Boat Zero Lemon Lime Flavored Drink (600 ml)</p>
+                            <p>₹117</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="17.png" alt="7UP Nimbooz with Lemon Juice" width="200" height="150">
+                            <p>7UP Nimbooz with Lemon Juice (350 ml)</p>
+                            <p>₹20</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            <div id="snacks" class="content-section">
+                <h1 align="center">Snacks</h1>
+                <p align="center">
+                    Treat yourself to our best snacks! From spicy chips to crunchy munchies, we have everything to satisfy your cravings at great prices.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="18.png" alt="Bingo Original Style Chilli Sprinkled Potato Chips" width="200" height="150">
+                            <p>Bingo Original Style Chilli Sprinkled Potato Chips - Pack of 3 (3 x 90 g)</p>
+                            <p>₹100 <span style="text-decoration: line-through;">₹150</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="19.png" alt="Lay's West Indies Hot n Sweet Chilli Flavour Potato Chips" width="200" height="150">
+                            <p>Lay's West Indies Hot n Sweet Chilli Flavour Potato Chips (48 g)</p>
+                            <p>₹20</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="20.png" alt="Kurkure Masala Munch Crisps" width="200" height="150">
+                            <p>Kurkure Masala Munch Crisps - Pack of 3 (3 x 75 g)</p>
+                            <p>₹54 <span style="text-decoration: line-through;">₹60</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            <div id="vegetables" class="content-section">
+                <h1 align="center">Fresh Vegetables</h1>
+                <p align="center">
+                    Explore our range of fresh and healthy vegetables sourced directly from farms. Enjoy quality produce at the best prices.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="31.png" alt="Green Chilli (Mirapakaya)" width="200" height="150">
+                            <p>Green Chilli (Mirapakaya) - 100 g</p>
+                            <p>₹11 <span style="text-decoration: line-through;">₹14</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="32.png" alt="Onion (Ullipaya)" width="200" height="150">
+                            <p>Onion (Ullipaya) - 1 kg</p>
+                            <p>₹88 <span style="text-decoration: line-through;">₹110</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="33.png" alt="Potato (Bangala Dumpa)" width="200" height="150">
+                            <p>Potato (Bangala Dumpa) - 1 kg</p>
+                            <p>₹53 <span style="text-decoration: line-through;">₹70</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="34.png" alt="Ginger (Allam)" width="200" height="150">
+                            <p>Ginger (Allam) - 200 g</p>
+                            <p>₹32 <span style="text-decoration: line-through;">₹43</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="35.png" alt="Lady Finger (Bendakaya)" width="200" height="150">
+                            <p>Lady Finger (Bendakaya) - 250 g</p>
+                            <p>₹19 <span style="text-decoration: line-through;">₹26</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="36.png" alt="Green Cucumber (Dosakaya)" width="200" height="150">
+                            <p>Green Cucumber (Dosakaya) - (500 - 700) g</p>
+                            <p>₹35 <span style="text-decoration: line-through;">₹43</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="37.png" alt="Lemon (Nimmakaya)" width="200" height="150">
+                            <p>Lemon (Nimmakaya) - (250 - 300) g</p>
+                            <p>₹32 <span style="text-decoration: line-through;">₹41</span></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            <div id="cereal" class="content-section">
+                <h1 align="center">Breakfast & Instant Food</h1>
+                <p align="center">
+                    Start your day with our wide range of nutritious and delicious cereal products. Perfect for quick and healthy breakfasts!
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="44.png" alt="Kellogg's Multigrain Chocos Variety Pack" width="200" height="150">
+                            <p>Kellogg's Multigrain Chocos Variety Pack - 7 units</p>
+                            <p>₹70</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="45.png" alt="Kellogg's Corn Flakes with Immuno Nutrients" width="200" height="150">
+                            <p>Kellogg's Corn Flakes with Immuno Nutrients - 250 g</p>
+                            <p>₹115</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="46.png" alt="Kellogg's Corn Flakes Original" width="200" height="150">
+                            <p>Kellogg's Corn Flakes Original - 475 g</p>
+                            <p>₹195</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="47.png" alt="Kellogg's Double Chocolaty Fills Chocos" width="200" height="150">
+                            <p>Kellogg's Double Chocolaty Fills Chocos (Crunchy Outside, Creamy Inside) - 250 g</p>
+                            <p>₹205</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="48.png" alt="Kellogg's Multigrain Chocos More Chocolatey" width="200" height="150">
+                            <p>Kellogg's Multigrain Chocos More Chocolatey, No-Maida - 385 g</p>
+                            <p>₹205</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="49.png" alt="Kellogg's Real Almond Honey Corn Flakes" width="200" height="150">
+                            <p>Kellogg's Real Almond Honey Corn Flakes - 168 g</p>
+                            <p>₹99</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            <div id="sauces" class="content-section">
+                <h1 align="center">Sauces & Spreads</h1>
+                <p align="center">
+                    Add a burst of flavor to your meals with our wide range of delicious sauces and spreads!
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="50.png" alt="Kissan Fresh Tomato Ketchup" width="200" height="150">
+                            <p>Kissan Fresh Tomato Ketchup - 1.1 kg</p>
+                            <p>₹127 <del>₹150</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="51.png" alt="Maggi Rich Tomato Ketchup" width="200" height="150">
+                            <p>Maggi Rich Tomato Ketchup - 850 g</p>
+                            <p>₹120</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="52.png" alt="Veeba Chef's Special Tomato Ketchup" width="200" height="150">
+                            <p>Veeba Chef's Special Tomato Ketchup - 900 g</p>
+                            <p>₹84 <del>₹120</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="53.png" alt="Del Monte Tomato Ketchup" width="200" height="150">
+                            <p>Del Monte Tomato Ketchup - 970 g</p>
+                            <p>₹149 <del>₹165</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="54.png" alt="Heinz Tomato Ketchup" width="200" height="150">
+                            <p>Heinz Tomato Ketchup - 900 g</p>
+                            <p>₹266 <del>₹285</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="55.png" alt="Kissan Tomato Ketchup (No Onion & Garlic)" width="200" height="150">
+                            <p>Kissan Tomato Ketchup (No Onion & Garlic) - Doy Pack - 850 g</p>
+                            <p>₹116 <del>₹130</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="56.png" alt="Troovy Healthy Tomato Sauce" width="200" height="150">
+                            <p>Troovy Healthy Tomato Sauce (Chemical-Free) - 200 ml</p>
+                            <p>₹130 <del>₹158</del></p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="57.png" alt="Veeba Chef's Special Tomato Ketchup + Veeba Cheesy Melt Cheddar Sauce Combo" width="200" height="150">
+                            <p>Veeba Chef's Special Tomato Ketchup + Veeba Cheesy Melt Cheddar Sauce Combo</p>
+                            <p>₹ (price to be added)</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            
+            
+            <div id="meat" class="content-section">
+                <h1 align="center">Fresh Meat</h1>
+                <p align="center">
+                    Discover our selection of fresh, high-quality meat products. Perfect for cooking delicious and nutritious meals.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="38.png" alt="Sneha Select Chicken Curry Cut" width="200" height="150">
+                            <p>Sneha Select Chicken Curry Cut - 500 g</p>
+                            <p>₹146</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="39.png" alt="Sneha Select Boneless Chicken Breast" width="200" height="150">
+                            <p>Sneha Select Boneless Chicken Breast - 500 g</p>
+                            <p>₹225</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="40.png" alt="Licious Chicken Breast - Boneless" width="200" height="150">
+                            <p>Licious Chicken Breast - Boneless - 400 g</p>
+                            <p>₹265</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="41.png" alt="Sneha Super Cool Chicken Curry Cut (Skinless)" width="200" height="150">
+                            <p>Sneha Super Cool Chicken Curry Cut (Skinless) - 450 g (Frozen)</p>
+                            <p>₹160</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            
+            <div id="dairy" class="content-section">
+                <h1 align="center">Dairy Products</h1>
+                <p align="center">
+                    Discover our premium range of dairy products. From fresh milk to long-life options, we have everything to meet your daily dairy needs.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="21.png" alt="Heritage Daily Health Toned Milk" width="200" height="150">
+                            <p>Heritage Daily Health Toned Milk (500 ml)</p>
+                            <p>₹30</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="22.png" alt="Amul Gold Full Cream Fresh Milk" width="200" height="150">
+                            <p>Amul Gold Full Cream Fresh Milk (500 ml)</p>
+                            <p>₹35</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="23.png" alt="Heritage Full Cream Fresh Milk" width="200" height="150">
+                            <p>Heritage Full Cream Fresh Milk (500 ml)</p>
+                            <p>₹40</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="24.png" alt="Heritage Special Long Life Milk" width="200" height="150">
+                            <p>Heritage Special Long Life Milk (500 ml)</p>
+                            <p>₹31</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="25.png" alt="Amul Taaza Homogenised Milk" width="200" height="150">
+                            <p>Amul Taaza Homogenised Milk (1 L)</p>
+                            <p>₹74</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            
+            <div id="masalas-oil" class="content-section">
+                <h1 align="center">Masalas & Oil</h1>
+                <p align="center">
+                    Explore our wide range of masalas and oils to enhance your cooking experience. We offer high-quality products at affordable prices, ensuring that every dish you prepare is flavorful and healthy.
+                </p>
+                <table align="center" cellspacing="10">
+                    <tr>
+                        <td align="center">
+                            <img src="turmeric.png" alt="Aashirvaad Turmeric" width="200" height="150">
+                            <p>Aashirvaad Turmeric (100g)</p>
+                            <p>₹26</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="1.png" alt="Maggi Masala" width="200" height="150">
+                            <p>Maggi Masala-ae-Magic (72g)</p>
+                            <p>₹60</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="2.png" alt="Everest Coriander Powder" width="200" height="150">
+                            <p>Everest Coriander Powder (100g)</p>
+                            <p>₹40</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <img src="3.png" alt="Everest Tikhalal Red Chilli Powder" width="200" height="150">
+                            <p>Everest Tikhalal Red Chilli Powder (100g)</p>
+                            <p>₹60</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="4.png" alt="Swastik Red Chilli Powder" width="200" height="150">
+                            <p>Swastik Red Chilli Powder (100g)</p>
+                            <p>₹41</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                        <td align="center">
+                            <img src="5.png" alt="Catch Turmeric Powder" width="200" height="150">
+                            <p>Catch Turmeric Powder (100g)</p>
+                            <p>₹35</p>
+                            <a href="#cart">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+                <p align="center">
+                    <a href="#categories">Back to Categories</a> | 
+                    <a href="#home">Back to Home</a>
+                </p>
+            </div>
+            
+            <div id="customer-support" class="content-section">
+                <h1 align="center">Customer Support</h1>
+                <p align="center">
+                    Our customer support team is here to help you with any questions or concerns. You can reach us through the
+                    following methods:
+                </p>
+                <ul align="center">
+                    <li>Email: <a href="mailto:supportme@bigbasket.com">supportme@bigbasket.com</a></li>
+                    <li>Phone: <a href="tel:1234567890">1234567890</a></li>
+                    <li>Live Chat: Available on our website</li>
+                </ul>
+                <p align="center">
+                    We are available 24/7 to assist you.
+                </p>
+            </div>
+            <div id="special-offers" class="content-section">
+                <h1 align="center">Special Offers</h1>
+                <p align="center">
+                    We provide exciting offers and discounts for our customers. Check out our current offers below:
+                </p>
+                <ul align="center">
+                    <li>10% off on your first order</li>
+                    <li>Buy 1 Get 1 Free on selected products</li>
+                    <li>Seasonal discounts up to 50% off</li>
+                </ul>
+                <p align="center">
+                    Stay tuned for more amazing offers! Visit this page frequently for updates.
+                </p>
+            </div>
+            <div id="special-offers" class="content-section">
+                <h1 align="center">Special Offers</h1>
+                <p align="center">
+                    We provide exciting offers and discounts for our customers. Check out our current offers below:
+                </p>
+                <ul align="center">
+                    <li>10% off on your first order</li>
+                    <li>Buy 1 Get 1 Free on selected products</li>
+                    <li>Seasonal discounts up to 50% off</li>
+                </ul>
+                <p align="center">
+                    Stay tuned for more amazing offers! Visit this page frequently for updates.
+                </p>
+            </div>
+            <div id="returns-refunds" class="content-section">
+                <h1 align="center">Returns & Refunds</h1>
+                <p align="center">
+                    We want you to be completely satisfied with your purchases. If you're not satisfied, here's how our returns and refunds process works:
+                </p>
+                <ul align="center">
+                    <li>Items can be returned within 7 days of purchase if they are unopened and in their original packaging.</li>
+                    <li>Refunds are processed within 7-10 business days after the return is approved.</li>
+                    <li>For damaged or incorrect items, please contact our customer support within 24 hours of receiving the product for a quick resolution.</li>
+                </ul>
+                <p align="center">
+                    For more details, please refer to our <a href="#terms" target="description_frame">Terms and Conditions</a> page.
+                </p>
+            </div>
+            <div id="payment-methods" class="content-section">
+                <h1 align="center">Payment Methods</h1>
+                <p align="center">
+                    We accept the following payment methods:
+                </p>
+                <ul align="center">
+                    <li>Credit/Debit Cards (Visa, MasterCard, etc.)</li>
+                    <li>UPI (PhonePe, Google Pay, Paytm, etc.)</li>
+                    <li>Net Banking</li>
+                    <li>Cash on Delivery (COD) (Available in select areas)</li>
+                </ul>
+                <p align="center">
+                    Choose your preferred payment method during checkout.
+                </p>
+            </div>
+            
+            <div id="home-delivery" class="content-section">
+                <h1 align="center">Home Delivery</h1>
+                <p align="center">
+                    We offer reliable and fast home delivery services. Your groceries will be delivered at your doorstep with
+                    utmost care and efficiency. Delivery charges may apply depending on your location.
+                </p>
+                <p align="center">
+                    For more details, please contact our customer support or visit our
+                    <a href="#terms" target="description_frame">Terms and Conditions</a> page.
+                </p>
+            </div>
+            
+            <div id="cart" class="content-section">
+                <h1 align="center">Your Shopping Cart</h1>
+                <form>
+                    <table align="center" border="1" cellpadding="10" cellspacing="0">
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>Apple (1 kg)</td>
+                            <td><input type="number" name="apple_qty" value="1" min="1" readonly></td>
+                            <td>₹ 300.00</td>
+                            <td>₹ 300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Milk (1 liter)</td>
+                            <td><input type="number" name="milk_qty" value="1" min="1" readonly></td>
+                            <td>₹ 120.00</td>
+                            <td>₹ 120.00</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (12 pcs)</td>
+                            <td><input type="number" name="eggs_qty" value="1" min="1" readonly></td>
+                            <td>₹ 150.00</td>
+                            <td>₹ 150.00</td>
+                        </tr>
+                    </table>
+                    <h2 align="center">Total: ₹ 570.00</h2>
+                    <p align="center">
+                        <a href="#home"><input type="button" value="Proceed to Checkout"></a>
+                        <a href="#home"><input type="button" value="Continue Shopping"></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
